@@ -59,7 +59,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func didTapOptionThree(_ sender: Any) {
-        optionThree.isHidden = true;
+        optionThree.isHidden = true; 
     }
     
 }
