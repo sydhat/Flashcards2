@@ -4,13 +4,15 @@
 ## Lab 1
 
 ### App Description
-A flashcard app that displays the question on the front of the card and when you click the card it flips to display the answer
+A flashcard app that displays the question on the front of the card and when you click the correct answer it flips the card and displays the answer. If the wrong answer is picked the option will disappear. 
 
 
 ### App Walk-though
 
+First version of app without optional steps
 <img src=http://g.recordit.co/UivM0dl16w.gif width=200><br>
-
+Second version with optional steps
+<img src=http://g.recordit.co/JtsbmirsLz.gif width=200><br>
 
 
 ## Required
@@ -20,6 +22,6 @@ A flashcard app that displays the question on the front of the card and when you
 - [x] Build in logic to show the answer side when the card is tapped
 - [x] Push code to GitHub
 ## Optional
-- [ ] Toggle the flashcard between the question side and the answer side
-- [ ] Style the question and answer side of the card to better distinguish between the two sides
-- [ ] Add selectable multiple choice answers beneath the card
+- [x] Toggle the flashcard between the question side and the answer side
+- [x] Style the question and answer side of the card to better distinguish between the two sides
+- [x] Add selectable multiple choice answers beneath the card
