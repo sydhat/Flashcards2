@@ -22,7 +22,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Annapolis " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nqT-zj-ms5">
                                         <rect key="frame" x="0.0" y="0.0" width="358" height="234"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -42,21 +42,45 @@
                                     <outletCollection property="gestureRecognizers" destination="Iej-ja-EpM" appends="YES" id="xdP-Ke-5lM"/>
                                 </connections>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LXA-d5-DpZ">
+                                <rect key="frame" x="20" y="640" width="374" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Annapolis"/>
+                                <connections>
+                                    <action selector="didTapOptionTwo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W1V-wD-tUe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sRm-Nh-B8C">
+                                <rect key="frame" x="20" y="739" width="374" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Ocean City"/>
+                                <connections>
+                                    <action selector="didTapOptionThree:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EDb-9B-UaF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RjK-Fb-1Ti">
+                                <rect key="frame" x="20" y="545" width="374" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Baltimore"/>
+                                <connections>
+                                    <action selector="didTapOptionOne:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LWL-Ro-aB2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="backLabel" destination="nqT-zj-ms5" id="XbZ-ul-Gyo"/>
+                        <outlet property="cardStyle" destination="lB1-x3-be6" id="Kof-bC-muQ"/>
                         <outlet property="frontLabel" destination="XF3-gu-ha2" id="I9j-N0-dHG"/>
+                        <outlet property="optionOne" destination="RjK-Fb-1Ti" id="RPT-Fz-hHU"/>
+                        <outlet property="optionThree" destination="sRm-Nh-B8C" id="fB8-11-FQo"/>
+                        <outlet property="optionTwo" destination="LXA-d5-DpZ" id="IzZ-Dq-VFx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="Iej-ja-EpM">
-                    <connections>
-                        <action selector="didTapOnFlashcard:" destination="BYZ-38-t0r" id="h9u-qK-7N1"/>
-                    </connections>
-                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Iej-ja-EpM"/>
             </objects>
             <point key="canvasLocation" x="113.04347826086958" y="137.94642857142856"/>
         </scene>
