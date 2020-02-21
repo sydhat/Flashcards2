@@ -12,7 +12,7 @@ A flashcard app that displays the question on the front of the card and when you
 First version of app without optional steps
 <img src=http://g.recordit.co/UivM0dl16w.gif width=200><br>
 Second version with optional steps
-<img src=http://g.recordit.co/LjtQYkDXhb.gif width=200><br>
+<img src=http://g.recordit.co/wCUdg5gCr4.gif width=200><br>
 
 
 ## Required
