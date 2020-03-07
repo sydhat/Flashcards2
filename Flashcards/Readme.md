@@ -6,7 +6,7 @@
 A flashcard app that has all the features of lab 1 but now lets you add another question and answer. When pressing the add button takes you to a new screen to type in the next question and answer. When finished making new question press done and it will display the new question 
 
 ### App Walk-though
-<img src= http://g.recordit.co/3pvR12yMgv.gif width=200><br>
+<img src= http://g.recordit.co/MIzABYCHyn.gif width=200><br>
 
 
 
