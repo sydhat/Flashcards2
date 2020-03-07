@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var frontLabel: UILabel!
     @IBOutlet weak var cardStyle: UIView!
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         cardStyle.layer.cornerRadius = 20.0;
@@ -35,32 +36,47 @@ class ViewController: UIViewController {
         frontLabel.clipsToBounds = true;
         cardStyle.layer.shadowRadius = 15.0;
         cardStyle.layer.shadowOpacity = 0.2;
-        // Do any additional setup after loading the view.
+      
     }
 
     @IBAction func didTapOnFlashcard(_ sender: Any) {
         
-        if (frontLabel.isHidden){
-            frontLabel.isHidden = false;
-            backLabel.isHidden = true;
-        } else {
-            frontLabel.isHidden = true;
-            backLabel.isHidden = false;
-        
+        if (frontLabel.isHidden == false){
+                 frontLabel.isHidden = false;
+                 backLabel.isHidden = true;
+             } else {
+                 frontLabel.isHidden = true;
+                 backLabel.isHidden = false;
         }
+        
     }
+    
+    func updateFlashcard(question: String, answer: String) {
+        frontLabel.text = question
+        backLabel.text = answer
+    }
+    
     @IBAction func didTapOptionOne(_ sender: Any) {
         optionOne.isHidden = true;
     }
     
+ 
+   
     @IBAction func didTapOptionTwo(_ sender: Any) {
         frontLabel.isHidden = true;
         backLabel.isHidden = false;
     }
     
     @IBAction func didTapOptionThree(_ sender: Any) {
-        optionThree.isHidden = true; 
+        optionThree.isHidden = true;
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let navigationController = segue.destination as! UINavigationController
+        
+        let creationController = navigationController.topViewController as! CreationViewController
+        
+        creationController.flashcardsController = self
+    }
 }
 

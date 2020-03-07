@@ -42,8 +42,16 @@
                                     <outletCollection property="gestureRecognizers" destination="Iej-ja-EpM" appends="YES" id="xdP-Ke-5lM"/>
                                 </connections>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RjK-Fb-1Ti">
+                                <rect key="frame" x="20" y="503" width="374" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Baltimore"/>
+                                <connections>
+                                    <action selector="didTapOptionOne:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LWL-Ro-aB2"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LXA-d5-DpZ">
-                                <rect key="frame" x="20" y="640" width="374" height="63"/>
+                                <rect key="frame" x="20" y="592" width="374" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Annapolis"/>
                                 <connections>
@@ -51,19 +59,20 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sRm-Nh-B8C">
-                                <rect key="frame" x="20" y="739" width="374" height="62"/>
+                                <rect key="frame" x="20" y="687" width="374" height="62"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Ocean City"/>
                                 <connections>
                                     <action selector="didTapOptionThree:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EDb-9B-UaF"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RjK-Fb-1Ti">
-                                <rect key="frame" x="20" y="545" width="374" height="64"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E7F-9l-L5N">
+                                <rect key="frame" x="161" y="797" width="92" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Baltimore"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <state key="normal" title="+"/>
                                 <connections>
-                                    <action selector="didTapOptionOne:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LWL-Ro-aB2"/>
+                                    <segue destination="ahH-s8-W42" kind="presentation" destinationCreationSelector="prepareForSegue:" id="4Aj-qF-L1d"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -82,7 +91,70 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="Iej-ja-EpM"/>
             </objects>
-            <point key="canvasLocation" x="113.04347826086958" y="137.94642857142856"/>
+            <point key="canvasLocation" x="-504.34782608695656" y="134.59821428571428"/>
+        </scene>
+        <!--Creation View Controller-->
+        <scene sceneID="wQ2-6j-EUV">
+            <objects>
+                <viewController id="u0t-GS-Jku" customClass="CreationViewController" customModule="Flashcards" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SxR-Jt-tux">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Answer" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CLf-XD-NI4">
+                                <rect key="frame" x="52" y="226" width="278" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Question" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DZG-uH-hU2">
+                                <rect key="frame" x="52" y="115" width="278" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="7dz-xf-QDv"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="YRZ-xz-7ic">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="E6s-zf-Gzn">
+                            <connections>
+                                <action selector="didTapOnCancel:" destination="u0t-GS-Jku" id="mlZ-tZ-dhn"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="1d0-iY-OSO">
+                            <connections>
+                                <action selector="didTapOnDone:" destination="u0t-GS-Jku" id="3ah-XF-mDS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="answerTextField" destination="CLf-XD-NI4" id="2mT-3F-eg4"/>
+                        <outlet property="questionTextField" destination="DZG-uH-hU2" id="a4b-nI-Uec"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TeI-iX-78R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1095.6521739130435" y="135.9375"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qBE-v8-tOa">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ahH-s8-W42" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="I0r-O2-AR3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="u0t-GS-Jku" kind="relationship" relationship="rootViewController" id="gFR-uZ-zep"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gSk-UU-mTs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="372" y="135"/>
         </scene>
     </scenes>
 </document>
