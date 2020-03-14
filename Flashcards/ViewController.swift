@@ -33,7 +33,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         cardStyle.layer.cornerRadius = 20.0;
         backLabel.layer.cornerRadius = 20.0;
         frontLabel.layer.cornerRadius = 20.0;
