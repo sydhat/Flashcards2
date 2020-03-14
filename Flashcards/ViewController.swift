@@ -8,6 +8,15 @@
 
 import UIKit
 
+struct Flashcard {
+    var question: String
+    var answer: String
+    var optionOne: String
+    var optionTwo: String
+    var optionThree: String
+    
+}
+
 class ViewController: UIViewController {
 
     @IBOutlet weak var optionOne: UIButton!
@@ -16,8 +25,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var backLabel: UILabel!
     @IBOutlet weak var frontLabel: UILabel!
     @IBOutlet weak var cardStyle: UIView!
+    @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var prevButton: UIButton!
     
-
+    var flashcards = [Flashcard]()
+    var currentIndex = 0;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         cardStyle.layer.cornerRadius = 20.0;
@@ -36,32 +49,77 @@ class ViewController: UIViewController {
         frontLabel.clipsToBounds = true;
         cardStyle.layer.shadowRadius = 15.0;
         cardStyle.layer.shadowOpacity = 0.2;
-      
+        readSavedFlashcards()
+        if (flashcards.count == 0) {
+            updateFlashcard(question: "What is the capital of Maryland", answer: "Annapolis", optionOne: "Baltimore", optionTwo: "Annapolis", optionThree: "Ocean City")
+        } else {
+            updateLabels()
+            updateOptions()
+            updateNextPrevButtons()
+        }
     }
 
-    @IBAction func didTapOnFlashcard(_ sender: Any) {
+    @IBAction func didTapOnFlashcard(_ sender: Any){
+        if (frontLabel.isHidden){
+            frontLabel.isHidden = false;
+        } else {
+            frontLabel.isHidden = true;
+        }
+    }
+
+    
+   
+    func updateFlashcard(question: String, answer: String, optionOne: String, optionTwo: String, optionThree: String) {
+        let flashcard = Flashcard(question: question, answer: answer, optionOne: optionOne, optionTwo: optionTwo, optionThree: optionThree)
+        flashcards.append(flashcard)
+        print("Added new flashcard")
+        print("We now have \(flashcards.count) flashcards")
+        currentIndex = flashcards.count - 1
+        print("Our current index is \(currentIndex)")
+        updateNextPrevButtons()
+        updateLabels()
+        updateOptions()
+        saveAllFlashcardsToDisk()
+    }
+    
+    func updateNextPrevButtons() {
+        if (currentIndex == flashcards.count - 1) {
+            nextButton.isEnabled = false;
+        } else {
+            nextButton.isEnabled = true;
+        }
         
-        if (frontLabel.isHidden == false){
-                 frontLabel.isHidden = false;
-                 backLabel.isHidden = true;
-             } else {
-                 frontLabel.isHidden = true;
-                 backLabel.isHidden = false;
+        if (currentIndex == 0) {
+            prevButton.isEnabled = false;
+        } else {
+            prevButton.isEnabled = true;
         }
         
     }
+   func updateOptions() {
+   
+        let currentFlashcard = flashcards[currentIndex]
+        optionOne.setTitle(currentFlashcard.optionOne, for: .normal)
+        optionTwo.setTitle(currentFlashcard.optionTwo, for: .normal)
+        optionThree.setTitle(currentFlashcard.optionThree, for: .normal)
+        optionOne.isHidden = false
+        optionThree.isHidden = false;
+       
+    }
     
-    func updateFlashcard(question: String, answer: String) {
-        frontLabel.text = question
-        backLabel.text = answer
+    func updateLabels() {
+        
+        let currentFlashcard = flashcards[currentIndex]
+        
+        frontLabel.text = currentFlashcard.question
+        backLabel.text = currentFlashcard.answer
+        frontLabel.isHidden = false;
     }
     
     @IBAction func didTapOptionOne(_ sender: Any) {
         optionOne.isHidden = true;
     }
     
- 
-   
     @IBAction func didTapOptionTwo(_ sender: Any) {
         frontLabel.isHidden = true;
         backLabel.isHidden = false;
@@ -78,5 +136,40 @@ class ViewController: UIViewController {
         
         creationController.flashcardsController = self
     }
+    
+    @IBAction func didTapOnNext(_ sender: Any) {
+        currentIndex = currentIndex + 1
+        updateLabels()
+        updateOptions()
+        updateNextPrevButtons()
+    }
+    
+    @IBAction func didTapOnPrev(_ sender: Any) {
+        currentIndex = currentIndex - 1
+        updateLabels()
+        updateOptions()
+        updateNextPrevButtons()
+    }
+    
+    func saveAllFlashcardsToDisk() {
+       
+        let dictionaryArray = flashcards.map { (card) -> [String: String] in
+            return ["question": card.question, "answer": card.answer, "optionOne": card.optionOne, "optionTwo": card.optionTwo, "optionThree": card.optionThree]
+        }
+        UserDefaults.standard.set(dictionaryArray, forKey: "flashcards")
+        
+        print("Flashcards saved to UserDefaults")
+        
+    }
+    
+    func readSavedFlashcards() {
+        if let dictionaryArray = UserDefaults.standard.array(forKey: "flashcards") as? [[String: String]]  {
+            let savedCards = dictionaryArray.map { (dictionary) -> Flashcard in
+                return Flashcard(question: dictionary["question"]!, answer: dictionary["answer"]!, optionOne: dictionary["optionOne"]!, optionTwo: dictionary["optionTwo"]!, optionThree: dictionary["optionThree"]!)
+            }
+            flashcards.append(contentsOf:savedCards)
+        }
+    }
+
 }
 
