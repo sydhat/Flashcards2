@@ -1,5 +1,26 @@
 ## Flashcards
 
+## Lab 4
+
+### App Description
+A flashcard app that has all the features of lab 3 but now lets you show an image for the app icon, displays an image of the app icon on the launch screen, and has animations when flipping the card and going to the next and previous card. 
+
+### App Walk-though
+<img src=http://g.recordit.co/oSGVsakrmk.gif width=200><br>
+
+## Required
+- [x] User should see the app icon 
+- [x] User should see a splash screen
+- [x] User should see an flip animation when revealing the answer
+- [x] User should see a slide animation when going to the next flashcard
+- [x] User should see a slide animation when going to the previous flashcard
+- [x] Push code to GitHub
+## Optional
+- [ ] User should see a nicer flaschard with rounded corners, shadows, and animating when showing the first time
+- [x] User should see all views properly layout when using the app on a phone of different sizes
+- [ ] Correct answer in multiple choice should be random
+
+
 # Lab 3
 
 ### App Description
